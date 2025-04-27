@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: checkout repo code
         uses: actions/checkout@v4
+        name: Download dependencies
       - run: |
           if [ ${{ inputs.app_type }} == nodejs ]; then
             npm install
@@ -29,6 +30,7 @@ jobs:
     steps:
       - name: checkout repo code
         uses: actions/checkout@v4
+        name: Docker push
         run: |
           export PATH=/home/github/.local/bin:/home/github/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 183295444327.dkr.ecr.us-east-1.amazonaws.com
