@@ -43,12 +43,12 @@ jobs:
       - name: checkout repo code
         uses: actions/checkout@v4
         with:
-          repository: https://github.com/Uzma-Solera/roboshop-helm.git
+          repository: https://github.com/Aahil684/roboshop-helm.git
       - name: Deploy
         run: |
           export PATH=/home/github/.local/bin:/home/github/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
-          #aws eks update-kubeconfig --name dev
-          #make component=${{ inputs.component_name }} env=dev
+          aws eks update-kubeconfig --name dev
+          make component=${{ inputs.component_name }} env=dev
   
 
   QA-deployment:
@@ -60,8 +60,8 @@ jobs:
       - name: Deploy
         run: |
           export PATH=/home/github/.local/bin:/home/github/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
-          #aws eks update-kubeconfig --name dev
-          #make component=${{ inputs.component_name }} env=qa
+          aws eks update-kubeconfig --name dev
+          make component=${{ inputs.component_name }} env=qa
 
   UAT-deployment:
     runs-on: self-hosted
