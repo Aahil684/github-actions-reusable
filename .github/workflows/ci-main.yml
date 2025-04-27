@@ -57,6 +57,8 @@ jobs:
     steps:
       - name: checkout repo code
         uses: actions/checkout@v4
+        with:
+          repository: Aahil684/roboshop-helm
       - name: Deploy
         run: |
           export PATH=/home/github/.local/bin:/home/github/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
@@ -69,6 +71,8 @@ jobs:
     steps:
       - name: checkout repo code
         uses: actions/checkout@v4
+        with:
+          repository: Aahil684/roboshop-helm
       - name: Deploy
         run: |
           export PATH=/home/github/.local/bin:/home/github/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
@@ -81,6 +85,8 @@ jobs:
     steps:
       - name: checkout repo code
         uses: actions/checkout@v4
+        with:
+          repository: Aahil684/roboshop-helm
       - name: Deploy
         run: |
           export PATH=/home/github/.local/bin:/home/github/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
